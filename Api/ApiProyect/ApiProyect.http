@@ -1,0 +1,21 @@
+@ApiProyect_HostAddress = http://localhost:5164
+
+GET {{ApiProyect_HostAddress}}/weatherforecast/
+Accept: application/json
+
+GET {{ApiProyect_HostAddress}}/productos/
+Accept: application/json
+
+POST {{ApiProyect_HostAddress}}/postproductos/
+Accept: application/json
+
+GET {{ApiProyect_HostAddress}}/clientes/
+Accept: application/json
+
+POST {{ApiProyect_HostAddress}}/postcategorias/
+Accept: application/json
+
+
+GET {{ApiProyect_HostAddress}}/categorias/
+Accept: application/json
+###

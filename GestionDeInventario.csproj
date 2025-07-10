@@ -23,4 +23,12 @@
     <Folder Include="wwwroot\imagenes_productos\" />
   </ItemGroup>
 
+  <ItemGroup>
+      <Compile Remove="Api\**" />
+      <Content Remove="Api\**" />
+      <EmbeddedResource Remove="Api\**" />
+      <None Remove="Api\**" />
+  </ItemGroup>
+    
+
 </Project>

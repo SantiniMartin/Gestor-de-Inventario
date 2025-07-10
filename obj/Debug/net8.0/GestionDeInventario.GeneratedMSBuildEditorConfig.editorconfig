@@ -17,121 +17,121 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GestionDeInventario
 build_property.RootNamespace = GestionDeInventario
-build_property.ProjectDir = C:\Users\Usuario\Desktop\Nueva carpeta (2)\Gestor-de-Inventario\
+build_property.ProjectDir = /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Usuario\Desktop\Nueva carpeta (2)\Gestor-de-Inventario
+build_property.MSBuildProjectDirectory = /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Categorias/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Categorias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcmlhcy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Categorias/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhc1xEZWxldGUuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Categorias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcmlhcy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Categorias/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhc1xEZXRhaWxzLmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Categorias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcmlhcy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Categorias/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhc1xFZGl0LmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Categorias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcmlhcy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Categorias/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Categorias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0ZWdvcmlhcy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Clientes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Clientes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Clientes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Clientes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Clientes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Clientes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Clientes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Clientes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Clientes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50ZXNcSW5kZXguY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Clientes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2xpZW50ZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Productos/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdG9zXENyZWF0ZS5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Productos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdG9zL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Productos/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdG9zXERlbGV0ZS5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Productos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdG9zL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Productos/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdG9zXERldGFpbHMuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Productos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdG9zL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Productos/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdG9zXEVkaXQuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Productos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdG9zL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Productos/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJvZHVjdG9zL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Usuarios/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXN1YXJpb3MvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Usuarios/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb3NcSW5kZXguY3NodG1s
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXN1YXJpb3MvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Ventas/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVudGFzXENyZWF0ZS5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Ventas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmVudGFzL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Ventas/Detalles.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVudGFzXERldGFsbGVzLmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Ventas/Detalles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmVudGFzL0RldGFsbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Ventas/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmVudGFzXEluZGV4LmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Ventas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVmVudGFzL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Pages/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-k5zpw1p8d2
+[/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b14fgwcvz3
