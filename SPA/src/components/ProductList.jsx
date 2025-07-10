@@ -6,6 +6,7 @@ const ProductList = () => {
     const [groupedProducts, setGroupedProducts] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -54,26 +55,52 @@ const ProductList = () => {
         return <div>Error al cargar los productos: {error}</div>;
     }
 
+    const filteredGroupedProducts = Object.values(groupedProducts)
+        .map(category => ({
+            ...category,
+            productos: category.productos.filter(product =>
+                product.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+            ),
+        }))
+        .filter(category => category.productos.length > 0);
+
     return (
         <div className="product-list-container">
-            {Object.values(groupedProducts).map(category => (
-                <div key={category.id} className="category-section">
-                    <h2 className="category-title">{category.nombre}</h2>
-                    <p className="category-description">{category.descripcion}</p>
-                    <ul className="product-list">
-                        {category.productos.map(product => (
-                            <li key={product.id} className="product-item">
-                                <Link to={`/product/${product.id}`} state={{ product }} className="product-link">
-                                    <h3>{product.nombre}</h3>
-                                    <p>{product.descripcion}</p>
-                                    <p className="price">Precio: ${product.precio.toFixed(2)}</p>
-                                    <p>Stock: {product.stock}</p>
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
+            <div className="search-container">
+                <input
+                    type="text"
+                    placeholder="Buscar producto por nombre..."
+                    className="search-input"
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
+                />
+            </div>
+
+            {filteredGroupedProducts.length > 0 ? (
+                filteredGroupedProducts.map(category => (
+                    <div key={category.id} className="category-section">
+                        <h2 className="category-title">{category.nombre}</h2>
+                        <p className="category-description">{category.descripcion}</p>
+                        <ul className="product-list">
+                            {category.productos.map(product => (
+                                <li key={product.id} className="product-item">
+                                    <Link to={`/product/${product.id}`} state={{ product }} className="product-link">
+                                        <h3>{product.nombre}</h3>
+                                        <p>{product.descripcion}</p>
+                                        <p className="price">Precio: ${product.precio.toFixed(2)}</p>
+                                        <p>Stock: {product.stock}</p>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))
+            ) : (
+                <div className="no-results-message">
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta con otra búsqueda o revisa si hay algún error tipográfico.</p>
                 </div>
-            ))}
+            )}
         </div>
     );
 };
