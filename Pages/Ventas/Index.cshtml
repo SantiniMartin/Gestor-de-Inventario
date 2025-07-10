@@ -1,0 +1,33 @@
+﻿@page
+@model GestionDeInventario.Pages.Ventas.IndexModel
+@{
+    ViewData["Title"] = "Ventas";
+}
+
+<h1>Historial de Ventas</h1>
+
+<a asp-page="Create" class="btn btn-primary mb-3">+ Nueva Venta</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venta in Model.Ventas)
+        {
+            <tr>
+                <td>@venta.Cliente.Nombre</td>
+                <td>@venta.Fecha.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>$@venta.Total.ToString("0.00")</td>
+                <td>
+                    <a asp-page="Detalles" asp-route-id="@venta.Id" class="btn btn-sm btn-info">Ver Detalles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

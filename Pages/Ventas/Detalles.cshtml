@@ -1,0 +1,41 @@
+﻿@page "{id:int}"
+@model GestionDeInventario.Pages.Ventas.DetallesModel
+@{
+    ViewData["Title"] = "Detalles de Venta";
+}
+
+<h1>Detalles de Venta</h1>
+
+@if (Model.Venta != null)
+{
+    <div class="mb-4">
+        <p><strong>Cliente:</strong> @Model.Venta.Cliente.Nombre</p>
+        <p><strong>Fecha:</strong> @Model.Venta.Fecha.ToString("dd/MM/yyyy HH:mm")</p>
+        <p><strong>Total:</strong> $@Model.Venta.Total.ToString("0.00")</p>
+    </div>
+
+    <h4>Productos vendidos:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Venta.Detalles)
+            {
+                <tr>
+                    <td>@item.Producto.Nombre</td>
+                    <td>$@item.PrecioUnitario.ToString("0.00")</td>
+                    <td>@item.Cantidad</td>
+                    <td>$@((item.Cantidad* item.PrecioUnitario).ToString("0.00"))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-page="Index" class="btn btn-secondary">Volver</a>
