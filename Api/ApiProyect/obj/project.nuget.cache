@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zKwQpaSWojU=",
+  "dgSpecHash": "W/8VqZk2DPc=",
   "success": true,
   "projectFilePath": "/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Api/ApiProyect/ApiProyect.csproj",
   "expectedPackageFiles": [
+    "/Users/orbesoftware/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/orbesoftware/.nuget/packages/dotnetenv/3.1.1/dotnetenv.3.1.1.nupkg.sha512",
     "/Users/orbesoftware/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/orbesoftware/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",

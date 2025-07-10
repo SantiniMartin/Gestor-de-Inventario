@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../hooks/useAuth';
 
 const Register = () => {
-    const [email, setEmail] = useState('');
+    const [nombreUsuario, setNombreUsuario] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const { register } = useAuth();
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        const { success, message } = register(email, password);
-        if (!success) {
-            setError(message);
+        const result = await register(nombreUsuario, password);
+        if (!result.success) {
+            setError(result.message);
         } else {
             navigate('/');
         }
@@ -26,12 +26,12 @@ const Register = () => {
                 <h2>Crear Cuenta</h2>
                 {error && <p className="auth-error">{error}</p>}
                 <div className="form-group">
-                    <label htmlFor="email">Correo Electrónico</label>
+                    <label htmlFor="nombreUsuario">Nombre de Usuario (Email)</label>
                     <input
                         type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        id="nombreUsuario"
+                        value={nombreUsuario}
+                        onChange={(e) => setNombreUsuario(e.target.value)}
                         required
                     />
                 </div>

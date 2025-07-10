@@ -1,5 +1,6 @@
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 using ApiProyect.Data;
 using ApiProyect.Models;
 var builder = WebApplication.CreateBuilder(args);
@@ -62,6 +63,21 @@ app.MapGet("/productos", async (AppDbContext db) =>
 })
 .WithName("GetProductos");
 
+app.MapGet("/productos/{id}", async (int id, AppDbContext db) =>
+{
+    var producto = await db.Productos
+        .Where(p => p.Id == id)
+        .FirstOrDefaultAsync();
+
+    if (producto == null)
+    {
+        return Results.NotFound();
+    }
+
+    return Results.Ok(producto);
+})
+.WithName("GetProductoById");
+
 app.MapGet("/clientes", async (AppDbContext db) =>
 {
     var clientes = await db.Clientes.ToListAsync();
@@ -99,7 +115,7 @@ app.MapPost("/postproductos", async (AppDbContext db, Producto producto) =>
 
     db.Productos.Add(producto);
     await db.SaveChangesAsync();
-    return Results.CreatedAtRoute("PostProductos", new { id = producto.Id }, producto);
+    return Results.CreatedAtRoute("GetProductoById", new { id = producto.Id }, producto);
 })
 .WithName("PostProductos");
 
@@ -116,6 +132,84 @@ app.MapPut("/productos/{id}", async (int id, Producto productoUpdate, AppDbConte
     return Results.Ok(producto);
 })
 .WithName("UpdateProducto");
+
+app.MapPost("/register", async (UsuarioDto usuarioDto, AppDbContext db) =>
+{
+    var usuarioExistente = await db.Usuarios.FirstOrDefaultAsync(u => u.NombreUsuario == usuarioDto.NombreUsuario);
+    if (usuarioExistente != null)
+    {
+        return Results.BadRequest("El nombre de usuario ya existe.");
+    }
+
+    var usuario = new Usuario
+    {
+        NombreUsuario = usuarioDto.NombreUsuario,
+        PasswordHash = BCrypt.Net.BCrypt.HashPassword(usuarioDto.Password)
+    };
+
+    db.Usuarios.Add(usuario);
+    await db.SaveChangesAsync();
+
+    return Results.StatusCode(201); // Created
+});
+
+app.MapPost("/login", async (UsuarioDto usuarioDto, AppDbContext db) =>
+{
+    var usuario = await db.Usuarios.FirstOrDefaultAsync(u => u.NombreUsuario == usuarioDto.NombreUsuario);
+
+    if (usuario == null || !BCrypt.Net.BCrypt.Verify(usuarioDto.Password, usuario.PasswordHash))
+    {
+        return Results.Unauthorized();
+    }
+
+    return Results.Ok("Login exitoso.");
+});
+
+app.MapPost("/forgot-password", async (ForgotPasswordDto forgotPasswordDto, AppDbContext db) =>
+{
+    var usuario = await db.Usuarios.FirstOrDefaultAsync(u => u.NombreUsuario == forgotPasswordDto.NombreUsuario);
+    if (usuario == null)
+    {
+        // Log de depuración para confirmar que el usuario no fue encontrado.
+        Console.WriteLine($"[DEBUG] Intento de reseteo para un usuario no encontrado: '{forgotPasswordDto.NombreUsuario}'");
+        // Se devuelve Ok para no revelar si un usuario existe o no (previene enumeración de usuarios)
+        return Results.Ok("Si existe una cuenta con ese nombre de usuario, se ha enviado un enlace para restablecer la contraseña.");
+    }
+
+    // Generar un token seguro
+    var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
+    usuario.PasswordResetToken = token;
+    usuario.ResetTokenExpires = DateTime.UtcNow.AddMinutes(15); // El token es válido por 15 minutos
+
+    await db.SaveChangesAsync();
+
+    // --- EN PRODUCCIÓN: ESTA SECCIÓN DEBE ENVIAR UN EMAIL ---
+    Console.WriteLine($"Password Reset Token for {usuario.NombreUsuario}: {token}");
+
+    // Devolver el token directamente en la respuesta para que el frontend construya la ruta.
+    return Results.Ok(new { token });
+})
+.WithName("ForgotPassword");
+
+app.MapPost("/reset-password", async (ResetPasswordDto resetPasswordDto, AppDbContext db) =>
+{
+    var usuario = await db.Usuarios.FirstOrDefaultAsync(u => u.PasswordResetToken == resetPasswordDto.Token);
+
+    if (usuario == null || usuario.ResetTokenExpires < DateTime.UtcNow)
+    {
+        return Results.BadRequest("El token es inválido o ha expirado.");
+    }
+
+    // Actualizar contraseña
+    usuario.PasswordHash = BCrypt.Net.BCrypt.HashPassword(resetPasswordDto.Password);
+    usuario.PasswordResetToken = null; // Limpiar el token después de usarlo
+    usuario.ResetTokenExpires = null;
+
+    await db.SaveChangesAsync();
+
+    return Results.Ok("La contraseña ha sido restablecida con éxito.");
+})
+.WithName("ResetPassword");
 
 app.Run();
 

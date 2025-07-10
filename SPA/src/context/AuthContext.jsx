@@ -1,66 +1,69 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
-import bcrypt from 'bcryptjs';
+import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';
 
-const AuthContext = createContext();
-
-const salt = bcrypt.genSaltSync(10);
-const defaultUserEmail = 'usuario@gmail.com';
-const defaultUserPass = 'admin';
-const hashedDefaultPass = bcrypt.hashSync(defaultUserPass, salt);
+import { AuthContext } from './AuthContextObject';
 
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Pre-load the default user if not present
-        const users = JSON.parse(localStorage.getItem('users')) || {};
-        if (!users[defaultUserEmail]) {
-            users[defaultUserEmail] = { password: hashedDefaultPass };
-            localStorage.setItem('users', JSON.stringify(users));
-        }
-
-        // Check for a logged-in user in localStorage on initial load
-        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        // Comprobar si hay un usuario logueado en localStorage al cargar la app
+        const loggedInUser = localStorage.getItem('currentUser');
         if (loggedInUser) {
-            setCurrentUser(loggedInUser);
+            setCurrentUser(JSON.parse(loggedInUser));
         }
         setLoading(false);
     }, []);
 
-    const login = (email, password) => {
-        const users = JSON.parse(localStorage.getItem('users')) || {};
-        const user = users[email];
+    const login = async (nombreUsuario, password) => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombreUsuario, password })
+            });
 
-        if (user && bcrypt.compareSync(password, user.password)) {
-            const userData = { email };
+            if (!response.ok) {
+                return false; // Falla el login
+            }
+
+            const userData = { nombreUsuario }; // Guardamos el nombre de usuario
             setCurrentUser(userData);
-            localStorage.setItem('loggedInUser', JSON.stringify(userData));
+            localStorage.setItem('currentUser', JSON.stringify(userData));
             return true;
+        } catch (error) {
+            console.error("Error en el login:", error);
+            return false;
         }
-        return false;
     };
 
-    const register = (email, password) => {
-        const users = JSON.parse(localStorage.getItem('users')) || {};
-        if (users[email]) {
-            return { success: false, message: 'El correo electrónico ya está registrado.' };
+    const register = async (nombreUsuario, password) => {
+        try {
+            const response = await fetch(`${API_BASE_URL}/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombreUsuario, password })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                return { success: false, message: errorData.message || 'Error al registrar.' };
+            }
+
+            // Opcional: auto-login después del registro
+            await login(nombreUsuario, password);
+
+            return { success: true };
+        } catch (error) {
+            console.error("Error en el registro:", error);
+            return { success: false, message: 'No se pudo conectar con el servidor.' };
         }
-        const hashedPassword = bcrypt.hashSync(password, salt);
-        users[email] = { password: hashedPassword };
-        localStorage.setItem('users', JSON.stringify(users));
-        
-        // Automatically log in the user after registration
-        const userData = { email };
-        setCurrentUser(userData);
-        localStorage.setItem('loggedInUser', JSON.stringify(userData));
-        
-        return { success: true };
     };
 
     const logout = () => {
         setCurrentUser(null);
-        localStorage.removeItem('loggedInUser');
+        localStorage.removeItem('currentUser');
     };
 
     const value = {
@@ -77,6 +80,4 @@ export const AuthProvider = ({ children }) => {
     );
 };
 
-export const useAuth = () => {
-    return useContext(AuthContext);
-};
+

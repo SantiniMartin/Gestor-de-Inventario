@@ -398,3 +398,4 @@ C:/Users/Usuario/Desktop/Nueva carpeta (2)/Gestor-de-Inventario/Api/ApiProyect/o
 /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Api/ApiProyect/obj/Debug/net9.0/ApiProyect.pdb
 /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Api/ApiProyect/obj/Debug/net9.0/ApiProyect.genruntimeconfig.cache
 /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Api/ApiProyect/obj/Debug/net9.0/ref/ApiProyect.dll
+/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/Api/ApiProyect/bin/Debug/net9.0/BCrypt.Net-Next.dll

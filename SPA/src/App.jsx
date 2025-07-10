@@ -2,11 +2,14 @@ import React from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
+import CreateProduct from './components/CreateProduct';
 import Checkout from './components/Checkout';
 import Login from './components/Login';
 import Register from './components/Register';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
 import ProtectedRoute from './components/ProtectedRoute';
-import { useAuth } from './context/AuthContext';
+import { useAuth } from './hooks/useAuth';
 import './App.css';
 
 function App() {
@@ -26,7 +29,7 @@ function App() {
           <nav className="header-nav">
             {currentUser ? (
               <>
-                <span className="welcome-user">Hola, {currentUser.email}</span>
+                <span className="welcome-user">Hola, {currentUser.nombreUsuario}</span>
                 <button onClick={handleLogout} className="auth-button-logout">Cerrar Sesión</button>
               </>
             ) : (
@@ -42,11 +45,21 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           <Route 
             path="/"
             element={
               <ProtectedRoute>
                 <ProductList />
+              </ProtectedRoute>
+            }
+          />
+          <Route 
+            path="/admin/create-product"
+            element={
+              <ProtectedRoute>
+                <CreateProduct />
               </ProtectedRoute>
             }
           />

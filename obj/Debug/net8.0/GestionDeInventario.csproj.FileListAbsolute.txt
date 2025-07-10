@@ -293,3 +293,5 @@
 /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/obj/Debug/net8.0/GestionDeInventario.pdb
 /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/obj/Debug/net8.0/GestionDeInventario.genruntimeconfig.cache
 /Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/obj/Debug/net8.0/ref/GestionDeInventario.dll
+/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/bin/Debug/net8.0/SPA/package-lock.json
+/Users/orbesoftware/Desktop/julian/Facultad/SPAprog3/Gestor-de-Inventario/bin/Debug/net8.0/SPA/package.json

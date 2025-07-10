@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 import { API_BASE_URL } from '../config';
 
 const ProductList = () => {
+    const { currentUser } = useAuth();
     const [groupedProducts, setGroupedProducts] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -64,8 +66,16 @@ const ProductList = () => {
         }))
         .filter(category => category.productos.length > 0);
 
+    const isAdmin = currentUser && currentUser.nombreUsuario === 'admin@gmail.com';
+
     return (
         <div className="product-list-container">
+            {isAdmin && (
+                <div className="admin-actions">
+                    <Link to="/admin/create-product" className="auth-button">Crear Nuevo Producto</Link>
+                </div>
+            )}
+
             <div className="search-container">
                 <input
                     type="text"
