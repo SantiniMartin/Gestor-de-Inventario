@@ -1,5 +1,6 @@
 ﻿using GestionDeInventario.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,22 @@ builder.Services.AddDbContext<GestionDeInventarioContext>(options =>
 // Registrar el DbContext con la cadena de conexi�n
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Agregar Identity
+builder.Services.AddDefaultIdentity<GestionDeInventario.Models.ApplicationUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+})
+    .AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddRazorPages(options =>
+{
+    options.Conventions.AuthorizeFolder("/"); // Requiere login para todas las páginas
+    options.Conventions.AllowAnonymousToPage("/Account/Login");
+    options.Conventions.AllowAnonymousToPage("/Account/Logout");
+    // Bloquea el registro público
+    options.Conventions.AuthorizePage("/Account/Register");
+});
 
 var app = builder.Build();
 
@@ -27,6 +44,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication(); // <-- Importante: antes de Authorization
 app.UseAuthorization();
 
 app.MapRazorPages();
