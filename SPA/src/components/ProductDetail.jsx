@@ -1,9 +1,14 @@
 import React from 'react';
-import { useLocation, Link, Navigate } from 'react-router-dom';
+import { useLocation, Link, Navigate, useNavigate } from 'react-router-dom';
 
 const ProductDetail = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { product } = location.state || {};
+
+    const handleGoToCheckout = () => {
+        navigate('/checkout', { state: { product } });
+    };
 
     // If the user navigates directly to this URL, the state will be undefined.
     // In that case, we redirect them to the homepage.
@@ -21,7 +26,11 @@ const ProductDetail = () => {
                     <p className="price">${product.precio.toFixed(2)}</p>
                     <p className="stock">{product.stock > 0 ? `${product.stock} unidades disponibles` : 'Sin stock'}</p>
                     <p className="brand">Marca: {product.marca}</p>
-                    <button className="buy-button" disabled={product.stock === 0}>
+                    <button 
+                        className="buy-button" 
+                        disabled={product.stock === 0} 
+                        onClick={handleGoToCheckout}
+                    >
                         {product.stock > 0 ? 'Comprar' : 'No disponible'}
                     </button>
                 </div>

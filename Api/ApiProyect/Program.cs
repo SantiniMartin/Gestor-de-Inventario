@@ -103,6 +103,20 @@ app.MapPost("/postproductos", async (AppDbContext db, Producto producto) =>
 })
 .WithName("PostProductos");
 
+app.MapPut("/productos/{id}", async (int id, Producto productoUpdate, AppDbContext db) =>
+{
+    var producto = await db.Productos.FindAsync(id);
+    if (producto is null) return Results.NotFound();
+
+    // Aquí asumimos que el frontend envía el nuevo stock en el objeto
+    // podrías también enviar solo la cantidad comprada y restarla aquí.
+    producto.Stock = productoUpdate.Stock;
+    
+    await db.SaveChangesAsync();
+    return Results.Ok(producto);
+})
+.WithName("UpdateProducto");
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

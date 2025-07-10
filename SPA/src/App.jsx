@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import ProductList from './components/ProductList';
 import ProductDetail from './components/ProductDetail';
+import Checkout from './components/Checkout';
 import Login from './components/Login';
 import Register from './components/Register';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -54,6 +55,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <ProductDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route 
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
               </ProtectedRoute>
             }
           />
